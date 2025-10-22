@@ -12,17 +12,16 @@ def detect_emotion():
     response = emotion_detector(input)
 
     try:
-        output = f"For the given statement, the system response is 'anger': " + response['anger'],"
-                f" 'disgust': " + response['disgust'] + f"'fear': " + response['fear'] + f" 'joy': "
-                + response['joy'] + f" 'sadness':" + response['sadness'] + f". The dominant emotion is "
-                + response['dominant_emotion']
+        output = f"For the given statement, the system response is 'anger': {response['anger']}, 'disgust': {response['disgust']} 'fear': {response['fear']} 'joy': {response['joy']}, 'sadness': {response['sadness']}. The dominant emotion is {response['dominant_emotion']}"
+
     except:
         output = "Invalid text! Please try again!"
-    finally:
-        continue
+
+
+    return output
 
 @app.route("/")
-def render_home:
+def render_home():
     return render_template("index.html")
 
 if __name__ == "__main__":
