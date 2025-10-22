@@ -17,7 +17,7 @@ def detect_emotion():
                 + response['joy'] + f" 'sadness':" + response['sadness'] + f". The dominant emotion is "
                 + response['dominant_emotion']
     except:
-        output = "Failure in detection, something is wrong..."
+        output = "Invalid text! Please try again!"
     finally:
         continue
 
